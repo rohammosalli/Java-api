@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: java-api
 spec:
-  replicas: 4
+  replicas: 3
   strategy:
     rollingUpdate:
       maxSurge: 25%
