@@ -32,6 +32,14 @@ spec:
           ports:
             - name: http
               containerPort: 4567
+          volumeMounts:
+          - name: nfs
+            mountPath: "/opt/"    
+      volumes:
+      - name: api-disk
+        persistentVolumeClaim:
+          claimName: api-disk
+        
 ---
 apiVersion: v1
 kind: Service
@@ -48,3 +56,14 @@ spec:
     name: java-api
   type: LoadBalancer
 ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: api-disk
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+    
