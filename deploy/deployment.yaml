@@ -1,0 +1,50 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: java-api
+spec:
+  replicas: 4
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name: java-api
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: java-api
+                  operator: In
+                  values:
+                  - java-api
+              topologyKey: kubernetes.io/hostname
+            weight: 100
+      containers: 
+        - name: java-api
+          image: gcr.io/PROJECTNAME/revolut:TRAVIS_COMMIT
+          ports:
+            - name: http
+              containerPort: 4567
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: java-api
+  labels: 
+    name: java-api
+spec:
+  ports:
+    - name: http
+      port: 4567
+      targetPort: 4567
+  selector: 
+    name: java-api
+  type: LoadBalancer
+---
