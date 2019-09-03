@@ -4,7 +4,14 @@
 ### Part I - Simple Java API
 #### About the System 
 
-There is two way to run application on your own system .
+This image can show you the overview of the system 
+
+![alt text](https://github.com/rohammosalli/Java-api/blob/master/GKE.jpg "GKE overview")
+
+
+This Image can show you the overview of CI CD process 
+
+![alt text](https://github.com/rohammosalli/Java-api/blob/master/CICD.png "CICD overview")
 
 ### How to run
 
