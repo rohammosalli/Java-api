@@ -40,11 +40,12 @@ There is no need to manual work to deploy, if you merge or commit to master bran
 I choose Terraform for provision our infrastructure because it has big community and it's stable to now. Actually we have no manual work even for implement our production environment, here we go
 
 
-###### Step 1 ( Install Terraform ):
+ Step 1 ( Install Terraform ):
 
 Download terraform from below link and extend path to your bash path variable Download [HERE](https://www.terraform.io/downloads.html)
 
-Step 2 ( Download Google Cloud Service Key and Enable kubernetes API )
+###### Step 2 
+( Download Google Cloud Service Key and Enable kubernetes API )
 
 We need a way for the Terraform runtime to authenticate with the GCP API so go to the Cloud Console, navigate to IAM & Admin > Service Accounts, and click Create Service Account with Project Editor role. Your browser will download a JSON file containing the details of the service account and a private key that can authenticate as a project editor to your project. Keep this JSON file safe!
 
