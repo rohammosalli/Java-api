@@ -17,7 +17,10 @@ This Image can show you the overview of CI CD process
 
 This application able to run from docker so you can run it with below command and it will run on your system :) be sure you have docker and  docker-compose installed.
 
-```bash    docker-compose up -d ```
+```bash 
+
+   docker-compose up -d
+```
 
 Application listens on port 4567.
 

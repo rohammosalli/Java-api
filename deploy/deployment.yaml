@@ -33,7 +33,7 @@ spec:
             - name: http
               containerPort: 4567
           volumeMounts:
-          - name: nfs
+          - name: api-disk
             mountPath: "/opt/"    
       volumes:
       - name: api-disk
