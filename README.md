@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/rohammosalli/simple-java-api.svg?branch=master)](https://travis-ci.org/rohammosalli/simple-java-api)
+[![Build Status](https://travis-ci.org/rohammosalli/Java-api.svg?branch=master)](https://travis-ci.org/rohammosalli/Java-api)
 
 
 ### Part I - Simple Java API
