@@ -99,12 +99,12 @@ public class ServiceImpl {
         updatableBirthDate.add(Calendar.YEAR, ((int) noOfYearsBetween));
         long nextBirthday;
         if (new Date().after(updatableBirthDate.getTime())) {
-            nextBirthday = ChronoUnit.DAYS.between(measurableCurrentDate, LocalDate.parse(dateFormatter.format(updatableBirthDate.getTime())));
-        } else {
             nextBirthday = ChronoUnit.DAYS.between(LocalDate.parse(dateFormatter.format(updatableBirthDate.getTime())), measurableCurrentDate);
+        } else {
+            nextBirthday = ChronoUnit.DAYS.between(measurableCurrentDate, LocalDate.parse(dateFormatter.format(updatableBirthDate.getTime())));
         }
 
-        return "Hello " + username + "  " + nextBirthday + " Day(s) to your birthday";
+        return "Hello " + username + "  " + nextBirthday + " Days to your birthday";
 
     }
 }
