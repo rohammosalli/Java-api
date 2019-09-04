@@ -10,8 +10,8 @@ services:
 env:
   global:
     - GOOGLE_APPLICATION_CREDENTIALS=~/gcloud-service-key.json
-    - PROJECT_NAME=amir-251705 
-    - CLUSTER_NAME=amir-cluster 
+    - PROJECT_NAME=amir-251909 
+    - CLUSTER_NAME=standard-cluster-1 
     - CLOUDSDK_COMPUTE_ZONE=europe-north1-a
 
 before_install:
