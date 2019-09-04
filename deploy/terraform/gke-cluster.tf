@@ -1,5 +1,5 @@
 resource "google_container_cluster" "gke-cluster" {
-  name     = "pipedrive-cluster"
+  name     = "standard-cluster-1"
   location = "europe-north1-a"
   remove_default_node_pool = true
   initial_node_count = 1
@@ -19,3 +19,5 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
     update = "20m"
   }
 }
+
+
