@@ -62,7 +62,7 @@ metadata:
   name: api-disk
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
