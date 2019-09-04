@@ -1,4 +1,3 @@
----
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -39,7 +38,7 @@ spec:
       volumes:
       - name: api-disk
         persistentVolumeClaim:
-          claimName: models-1-0-0-claim
+          claimName: api-disk
         
 ---
 apiVersion: v1
@@ -56,36 +55,16 @@ spec:
   selector: 
     name: java-api
   type: LoadBalancer
-
 ---
-kind: PersistentVolume
 apiVersion: v1
-metadata:
-  name: models-1-0-0
-  labels:
-    name: models-1-0-0
-spec:
-  capacity:
-    storage: 1Gi
-  storageClassName: standard
-  accessModes:
-    - ReadOnlyMany
-  gcePersistentDisk:
-    pdName: models-1-0-0
-    fsType: ext4
-    readOnly: true
----
 kind: PersistentVolumeClaim
-apiVersion: v1
 metadata:
-  name: models-1-0-0-claim
+  name: api-disk
 spec:
   accessModes:
-    - ReadOnlyMany
+    - ReadWriteMany
   resources:
     requests:
       storage: 1Gi
-  selector:
-    matchLabels:
-      name: models-1-0-0
+---
       
