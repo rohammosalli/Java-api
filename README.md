@@ -73,6 +73,6 @@ you can find this file in deploy/terraform folder
 terraform apply
 
 
-### Notice 
+### Note (SRE aspect)
 
 1 - the most common SRE aspect for zero downtime says we can use Blue/Green or Canary or rolling update to make out app HA since I use Kubernetes I will use a rolling update
